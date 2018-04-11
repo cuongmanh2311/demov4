@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="app/components/angular.min.js"></script>
+    <script type="text/javascript" src="app/components/angular-route.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+</head>
+<script type="text/javascript"></script>
+<body>
+    <!-- <div>{{ 1 + 2 }}</div>
+
+    <input ng-model = "username" >
+    {{ username }} -->
+
+
+
+    <div ng-app = "myApp" >
+
+        <!--bài 35-->
+
+        <div ng-controller="manageController">
+            <button ng-click = "add()">Add asd</button>
+            <button ng-click = "remove()">Remove </button>
+            <button ng-click = "edit()">Edit </button>
+        </div>
+        <!--Bài 26-->
+
+        <ng-view></ng-view>
+        <ng-error></ng-error>
+
+        <!--Bài 23 ng-view-->
+        <!-- <div style="height: 200px; background: red"> Header</div>
+        <ng-view></ng-view>
+        <div style="height: 200px; background: yellow">Footer</div> -->
+        <!--Bài 23-->
+        <br><br><hr>
+        <!--Bài 22 tamplete căn bản-->
+        <div ng-controller = "Bai21Controller">
+            <div>
+                <script type="text/ng-template" id="info.html">
+                    <h1>Hello</h1>
+                </script>
+                <div bai21></div>
+            </div>
+        </div>
+        <!--Loop(repeat)-->
+        <div ng-controller = "StudentCtrl">
+            <table border="1">
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Email></td>
+                </tr>
+
+                <tr ng-repeat = "student in students">
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.email }}</td>
+                </tr>
+            </table>
+        </div>
+        <br><hr>
+        <!--transclusion-->
+        <login>
+            username:<input type="text" ><br>
+        </login>
+        <br><hr>
+        <!--isolating @-->
+        <div ng-controller = "Mycontroller">
+            <div mc content="{{content}}"></div>
+        </div>
+
+        <br><hr>
+        <!--directive talking to controller-->
+        <div ng-controller = "MessageController">
+            <!--10-->
+            <!-- <div message a = "showMessage()">
+                content here
+            </div> -->
+
+            <!--11-->
+           <!--  <message>
+                content here
+            </message> -->
+
+            <!--12-->
+            <message show = "showMessage(messages)"></message>
+        </div>
+        <!--restrict-->
+        <div demo></div>
+
+        <!--Định nghĩa một directive-->
+        <div ng-controller = "Login">
+            <div ng-formlogin></div>
+        </div>
+
+        <hr>
+        <div ng-controller = "maytinh">
+            <input type="text" ng-model = "so1"><br>
+            <input type = "text" ng-model = "so2"><br>
+            <select ng-model = "pheptinh">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value=":">:</option>
+            </select><br>
+            <button ng-click = "tinh()">Xem ket qua</button>
+            {{ketqua}}
+        </div>
+
+        <br>
+        <hr>
+        <div ng-controller="ShowMessage">
+            {{message}}
+            {{title}}
+            {{data.message}} <!--data là object khai báo $scope.data = {}-->
+        </div>
+
+
+        <div ng-controller = "Controller1">
+            <input type="text" ng-model = "message">
+            {{message}}
+        </div>
+        <div ng-controller = "Controller2">
+            {{messages}}
+        </div>
+        
+    </div>
+
+
+</body>
+</html>
